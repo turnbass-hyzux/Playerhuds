@@ -1,5 +1,6 @@
 package dev.lone.rpghuds.core.settings;
 
+import dev.lone.itemsadder.api.FontImages.FontImageWrapper;
 import dev.lone.itemsadder.api.FontImages.PlayerCustomHudWrapper;
 import dev.lone.itemsadder.api.FontImages.PlayerHudsHolderWrapper;
 import org.bukkit.World;

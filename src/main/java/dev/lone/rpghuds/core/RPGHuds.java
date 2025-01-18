@@ -4,10 +4,7 @@ import dev.lone.itemsadder.api.FontImages.PlayerHudsHolderWrapper;
 import dev.lone.itemsadder.api.ItemsAdder;
 import dev.lone.rpghuds.Main;
 import dev.lone.rpghuds.core.data.*;
-import dev.lone.rpghuds.core.settings.ArrowTargetSettings;
-import dev.lone.rpghuds.core.settings.CompassSettings;
 import dev.lone.rpghuds.core.settings.MoneySettings;
-import dev.lone.rpghuds.core.settings.QuiverSettings;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -42,7 +39,7 @@ public class RPGHuds
     private boolean allPlayersInitialized;
 
     //TODO: recode this shit. Very dirty
-    private final List<String> hudsNames = Arrays.asList("rpghuds:money", "rpghuds:compass", "rpghuds:quiver", "rpghuds:arrow_target");
+    private final List<String> hudsNames = Arrays.asList("rpghuds:money", "rpghuds:mobcoins", "rpghuds:minercoins", "rpghuds:farmercoins","rpghuds:jobs_hunter","rpghuds:jobs_miner","rpghuds:jobs_farmer");
 
 
     public RPGHuds(Main plugin)
@@ -106,7 +103,6 @@ public class RPGHuds
         {
             playerData = new PlayerData(new PlayerHudsHolderWrapper(player));
 
-            //TODO: recode this shit. Very dirty
             if (Main.settings.moneyEnabled)
             {
                 playerData.registerHud(new MoneyHud(
@@ -115,97 +111,126 @@ public class RPGHuds
                         new MoneySettings(
                                 "rpghuds:money",
                                 "rpghuds:money_icon",
-                                "rpghuds:money_digit_0",
-                                "rpghuds:money_digit_1",
-                                "rpghuds:money_digit_2",
-                                "rpghuds:money_digit_3",
-                                "rpghuds:money_digit_4",
-                                "rpghuds:money_digit_5",
-                                "rpghuds:money_digit_6",
-                                "rpghuds:money_digit_7",
-                                "rpghuds:money_digit_8",
-                                "rpghuds:money_digit_9",
-                                "rpghuds:money_char_unknown",
-                                "rpghuds:money_char_k",
-                                "rpghuds:money_char_m",
-                                "rpghuds:money_char_b",
-                                "rpghuds:money_char_t",
-                                "rpghuds:money_char_dot",
-                                "rpghuds:money_char_comma",
-                                "rpghuds:money_char_arrow_up",
-                                "rpghuds:money_char_arrow_down",
+                                "rpghuds:backgroud_32",
+                                "rpghuds:digit_0",
+                                "rpghuds:digit_1",
+                                "rpghuds:digit_2",
+                                "rpghuds:digit_3",
+                                "rpghuds:digit_4",
+                                "rpghuds:digit_5",
+                                "rpghuds:digit_6",
+                                "rpghuds:digit_7",
+                                "rpghuds:digit_8",
+                                "rpghuds:digit_9",
+                                "rpghuds:char_unknown",
+                                "rpghuds:char_k",
+                                "rpghuds:char_m",
+                                "rpghuds:char_b",
+                                "rpghuds:char_t",
+                                "rpghuds:char_dot",
+                                "rpghuds:char_comma",
+                                "rpghuds:char_arrow_up",
+                                "rpghuds:char_arrow_down",
                                 Main.settings.moneyOffset,
                                 Main.settings.moneyWorlds
                         )
                 ), false);
-            }
-
-            //TODO: recode this shit. Very dirty
-            if (Main.settings.compassEnabled)
-            {
-                playerData.registerHud(new CompassHud(
-                        playerData.getHolder(),
-                        new CompassSettings(
-                                "rpghuds:compass",
-                                "rpghuds:hud_compass_",
-                                Main.settings.compassOffset,
-                                Main.settings.compassWorlds
-                        )
-                ), true);
-            }
-
-            //TODO: recode this shit. Very dirty
-            if (Main.settings.quiverEnabled)
-            {
-                playerData.registerHud(new QuiverHud(
-                        playerData.getHolder(),
-                        new QuiverSettings(
-                                "rpghuds:quiver",
-                                "rpghuds:quiver",
-                                "rpghuds:quiver_half",
-                                "rpghuds:quiver_empty",
-                                "rpghuds:quiver_digit_0",
-                                "rpghuds:quiver_digit_1",
-                                "rpghuds:quiver_digit_2",
-                                "rpghuds:quiver_digit_3",
-                                "rpghuds:quiver_digit_4",
-                                "rpghuds:quiver_digit_5",
-                                "rpghuds:quiver_digit_6",
-                                "rpghuds:quiver_digit_7",
-                                "rpghuds:quiver_digit_8",
-                                "rpghuds:quiver_digit_9",
-                                "rpghuds:quiver_char_unknown",
-                                Main.settings.quiverOffset,
-                                Main.settings.quiverOffsetWhenOffhandShown,
-                                Main.settings.quiverWorlds
-                        )
-                ), false);
-            }
-
-            //TODO: recode this shit. Very dirty
-            if (Main.settings.quiverEnabled)
-            {
-                playerData.registerHud(new ArrowTargetHud(
-                        playerData.getHolder(),
-                        new ArrowTargetSettings(
-                                "rpghuds:arrow_target",
-                                "rpghuds:arrow_target",
-                                "rpghuds:arrow_target_digit_0",
-                                "rpghuds:arrow_target_digit_1",
-                                "rpghuds:arrow_target_digit_2",
-                                "rpghuds:arrow_target_digit_3",
-                                "rpghuds:arrow_target_digit_4",
-                                "rpghuds:arrow_target_digit_5",
-                                "rpghuds:arrow_target_digit_6",
-                                "rpghuds:arrow_target_digit_7",
-                                "rpghuds:arrow_target_digit_8",
-                                "rpghuds:arrow_target_digit_9",
-                                "rpghuds:arrow_target_char_unknown",
-                                "rpghuds:arrow_target_char_percentage",
-                                Main.settings.arrowTargetOffset,
-                                Main.settings.arrowTargetWorlds
-                        )
-                ), false);
+                if (Main.settings.mobcoinsEnabled) {
+                    playerData.registerHud(new MobcoinsHub(
+                            Main.settings.mobcoinsPapi,
+                            playerData.getHolder(),
+                            new MoneySettings(
+                                    "rpghuds:mobcoins",
+                                    "rpghuds:mobcoins_icon",
+                                    "rpghuds:backgroud_32",
+                                    "rpghuds:digit_0",
+                                    "rpghuds:digit_1",
+                                    "rpghuds:digit_2",
+                                    "rpghuds:digit_3",
+                                    "rpghuds:digit_4",
+                                    "rpghuds:digit_5",
+                                    "rpghuds:digit_6",
+                                    "rpghuds:digit_7",
+                                    "rpghuds:digit_8",
+                                    "rpghuds:digit_9",
+                                    "rpghuds:char_unknown",
+                                    "rpghuds:char_k",
+                                    "rpghuds:char_m",
+                                    "rpghuds:char_b",
+                                    "rpghuds:char_t",
+                                    "rpghuds:char_dot",
+                                    "rpghuds:char_comma",
+                                    "rpghuds:char_arrow_up",
+                                    "rpghuds:char_arrow_down",
+                                    Main.settings.mobcoinsOffset,
+                                    Main.settings.mobcoinsWorlds
+                            )
+                    ), false);
+                }
+                if (Main.settings.minecoinsEnabled) {
+                    playerData.registerHud(new MobcoinsHub(
+                            Main.settings.minecoinsPapi,
+                            playerData.getHolder(),
+                            new MoneySettings(
+                                    "rpghuds:minecoins",
+                                    "rpghuds:minecoins_icon",
+                                    "rpghuds:backgroud_32",
+                                    "rpghuds:digit_0",
+                                    "rpghuds:digit_1",
+                                    "rpghuds:digit_2",
+                                    "rpghuds:digit_3",
+                                    "rpghuds:digit_4",
+                                    "rpghuds:digit_5",
+                                    "rpghuds:digit_6",
+                                    "rpghuds:digit_7",
+                                    "rpghuds:digit_8",
+                                    "rpghuds:digit_9",
+                                    "rpghuds:char_unknown",
+                                    "rpghuds:char_k",
+                                    "rpghuds:char_m",
+                                    "rpghuds:char_b",
+                                    "rpghuds:char_t",
+                                    "rpghuds:char_dot",
+                                    "rpghuds:char_comma",
+                                    "rpghuds:char_arrow_up",
+                                    "rpghuds:char_arrow_down",
+                                    Main.settings.minecoinsOffset,
+                                    Main.settings.mobcoinsWorlds
+                            )
+                    ), false);
+                }
+                if (Main.settings.farmcoinsEnabled) {
+                    playerData.registerHud(new MobcoinsHub(
+                            Main.settings.farmcoinsPapi,
+                            playerData.getHolder(),
+                            new MoneySettings(
+                                    "rpghuds:farmcoins",
+                                    "rpghuds:farmcoins_icon",
+                                    "rpghuds:backgroud_32",
+                                    "rpghuds:digit_0",
+                                    "rpghuds:digit_1",
+                                    "rpghuds:digit_2",
+                                    "rpghuds:digit_3",
+                                    "rpghuds:digit_4",
+                                    "rpghuds:digit_5",
+                                    "rpghuds:digit_6",
+                                    "rpghuds:digit_7",
+                                    "rpghuds:digit_8",
+                                    "rpghuds:digit_9",
+                                    "rpghuds:char_unknown",
+                                    "rpghuds:char_k",
+                                    "rpghuds:char_m",
+                                    "rpghuds:char_b",
+                                    "rpghuds:char_t",
+                                    "rpghuds:char_dot",
+                                    "rpghuds:char_comma",
+                                    "rpghuds:char_arrow_up",
+                                    "rpghuds:char_arrow_down",
+                                    Main.settings.farmcoinsOffset,
+                                    Main.settings.farmcoinsWorlds
+                            )
+                    ), false);
+                }
             }
 
             datasByPlayer.put(player, playerData);

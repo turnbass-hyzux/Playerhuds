@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.Nullable;
 
-public class MoneyHud extends PAPIHud<MoneySettings>
+public class MobcoinsHub extends PAPIHud<MoneySettings>
 {
     private static boolean HAS_CHECKED_PLACEHOLDER = false;
 
@@ -25,9 +25,9 @@ public class MoneyHud extends PAPIHud<MoneySettings>
     @Nullable
     private FontImageWrapper currentArrow;
 
-    public MoneyHud(String placeholder,
-                    PlayerHudsHolderWrapper holder,
-                    MoneySettings settings) throws NullPointerException
+    public MobcoinsHub(String placeholder,
+                       PlayerHudsHolderWrapper holder,
+                       MoneySettings settings) throws NullPointerException
     {
         super(placeholder, holder, settings);
         this.player = holder.getPlayer();
@@ -96,7 +96,6 @@ public class MoneyHud extends PAPIHud<MoneySettings>
             HAS_CHECKED_PLACEHOLDER = true;
             return RenderAction.HIDDEN;
         }
-
         imgsBuffer.clear();
         imgsBuffer.add(hudSettings.backgroud);
         if(currentArrow != null)

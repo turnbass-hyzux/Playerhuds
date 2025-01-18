@@ -1,4 +1,4 @@
-name: RPGhuds
+name: Playerhuds
 version: 1.2.0-r2
 main: dev.lone.rpghuds.Main
 api-version: 1.13

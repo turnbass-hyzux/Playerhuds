@@ -5,35 +5,66 @@ money:
   enabled: true
   offset: 91
   # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
-  papi_placeholder: "%vault_eco_balance_formatted%"
+  text: "%vault_eco_balance_formatted%"
   worlds:
     - world
     - world_nether
     - world_the_end
-compass:
+mobcoins:
   enabled: true
-  offset: -9
+  offset: 101
+  # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+  text: "%vault_eco_balance_formatted%"
   worlds:
     - world
     - world_nether
     - world_the_end
-quiver:
+minecoins:
   enabled: true
-  offset:
-    normal: -96
-    when_offhand_shown: -124
-  content_update_ticks: 100
+  offset: 111
+  # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+  text: "%vault_eco_balance_formatted%"
   worlds:
     - world
     - world_nether
     - world_the_end
-arrow_target:
+farmcoins:
   enabled: true
-  offset: -98
+  offset: 121
+  # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+  text: "%vault_eco_balance_formatted%"
   worlds:
     - world
     - world_nether
     - world_the_end
+jobs_hunter:
+    enabled: true
+    offset: 151
+    # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+    text: "%vault_eco_balance_formatted%"
+    worlds:
+      - world
+      - world_nether
+      - world_the_end
+jobs_miner:
+  enabled: true
+  offset: 161
+  # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+  text: "%vault_eco_balance_formatted%"
+  worlds:
+    - world
+    - world_nether
+    - world_the_end
+jobs_farmer:
+  enabled: true
+  offset: 181
+  # All money playerholders: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#vault
+  text: "%vault_eco_balance_formatted%"
+  worlds:
+    - world
+    - world_nether
+    - world_the_end
+
 lang:
   hud_not_found: "&6Hud not found!"
   wrong_usage: "&cWrong command usage."

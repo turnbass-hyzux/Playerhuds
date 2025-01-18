@@ -19,6 +19,7 @@ public class MoneySettings extends IconAmountSettings
 
     public MoneySettings(String namespacedID,
                          String icon,
+                         String backgroud,
                          String digit_0,
                          String digit_1,
                          String digit_2,
@@ -45,6 +46,7 @@ public class MoneySettings extends IconAmountSettings
         super(
                 namespacedID,
                 icon,
+                backgroud,
                 digit_0,
                 digit_1,
                 digit_2,

@@ -7,3 +7,39 @@ huds:
       auto: false
       underwater: false
     type: CUSTOM
+  mobcoins:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM
+  minecoins:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM
+  farmcoins:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM
+  jobs_hunter:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM
+  jobs_miner:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM
+  jobs_farmer:
+    enabled: true
+    show:
+      auto: false
+      underwater: false
+    type: CUSTOM

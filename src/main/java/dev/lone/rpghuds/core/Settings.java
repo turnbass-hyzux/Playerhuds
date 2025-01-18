@@ -18,7 +18,31 @@ public class Settings
     public boolean legacyTextures;
     public int moneyOffset;
     public HashSet<String> moneyWorlds;
+    public boolean mobcoinsEnabled;
+    public String mobcoinsPapi;
+    public int mobcoinsOffset;
+    public HashSet<String> mobcoinsWorlds;
+    public boolean minecoinsEnabled;
+    public String minecoinsPapi;
+    public int minecoinsOffset;
+    public HashSet<String> minecoinsWorlds;
+    public boolean farmcoinsEnabled;
+    public String farmcoinsPapi;
+    public int farmcoinsOffset;
+    public HashSet<String> farmcoinsWorlds;
 
+    public boolean jobs_hunterEnabled;
+    public String jobs_hunterPapi;
+    public int jobs_hunterOffset;
+    public HashSet<String> jobs_hunterWorlds;
+    public boolean jobs_minerEnabled;
+    public String jobs_minerPapi;
+    public int jobs_minerOffset;
+    public HashSet<String> jobs_minerWorlds;
+    public boolean jobs_farmerEnabled;
+    public String jobs_farmerPapi;
+    public int jobs_farmerOffset;
+    public HashSet<String> jobs_farmerWorlds;
     public boolean compassEnabled;
     public int compassOffset;
     public HashSet<String> compassWorlds;
@@ -46,23 +70,41 @@ public class Settings
         this.legacyTextures = config.getBoolean("legacy_1_18_and_lower_textures", false);
 
         this.moneyEnabled = config.getBoolean("money.enabled", true);
-        this.moneyPapi = config.getString("money.papi_placeholder", "%vault_eco_balance_fixed%");
+        this.moneyPapi = config.getString("money.text", "%vault_eco_balance_fixed%");
         this.moneyOffset = config.getInt("money.offset", 88);
         this.moneyWorlds = new HashSet<>(config.getStringList("money.worlds"));
 
-        this.compassEnabled = config.getBoolean("compass.enabled", true);
-        this.compassOffset = config.getInt("compass.offset", 6);
-        this.compassWorlds = new HashSet<>(config.getStringList("compass.worlds"));
+        this.mobcoinsEnabled = config.getBoolean("mobcoins.enabled", true);
+        this.mobcoinsPapi = config.getString("mobcoins.text", "%vault_eco_balance_fixed%");
+        this.mobcoinsOffset = config.getInt("mobcoins.offset", 88);
+        this.mobcoinsWorlds = new HashSet<>(config.getStringList("mobcoins.worlds"));
 
-        this.quiverEnabled = config.getBoolean("quiver.enabled", true);
-        this.quiverWorlds = new HashSet<>(config.getStringList("quiver.worlds"));
-        this.quiverOffset = config.getInt("quiver.offset.normal", -96);
-        this.quiverOffsetWhenOffhandShown = config.getInt("quiver.offset.when_offhand_shown", -124);
-        this.quiverContentUpdateTicks = config.getInt("quiver.content_update_ticks", 100);
+        this.minecoinsEnabled = config.getBoolean("minecoins.enabled", true);
+        this.minecoinsPapi = config.getString("minecoins.text", "%vault_eco_balance_fixed%");
+        this.minecoinsOffset = config.getInt("minecoins.offset", 88);
+        this.minecoinsWorlds = new HashSet<>(config.getStringList("minecoins.worlds"));
 
-        this.arrowTargetEnabled = config.getBoolean("arrow_target.enabled", true);
-        this.arrowTargetOffset = config.getInt("arrow_target.offset", 0);
-        this.arrowTargetWorlds = new HashSet<>(config.getStringList("arrow_target.worlds"));
+        this.farmcoinsEnabled = config.getBoolean("farmcoins.enabled", true);
+        this.farmcoinsPapi = config.getString("farmcoins.text", "%vault_eco_balance_fixed%");
+        this.farmcoinsOffset = config.getInt("farmcoins.offset", 88);
+        this.farmcoinsWorlds = new HashSet<>(config.getStringList("farmcoins.worlds"));
+
+        this.jobs_hunterEnabled = config.getBoolean("jobs_hunter.enabled", true);
+        this.jobs_hunterPapi = config.getString("jobs_hunter.text", "%vault_eco_balance_fixed%");
+        this.jobs_hunterOffset = config.getInt("jobs_hunter.offset", 88);
+        this.jobs_hunterWorlds = new HashSet<>(config.getStringList("jobs_hunter.worlds"));
+
+        this.jobs_minerEnabled = config.getBoolean("jobs_miner.enabled", true);
+        this.jobs_minerPapi = config.getString("jobs_miner.text", "%vault_eco_balance_fixed%");
+        this.jobs_minerOffset = config.getInt("jobs_miner.offset", 88);
+        this.jobs_minerWorlds = new HashSet<>(config.getStringList("jobs_miner.worlds"));
+
+        this.jobs_farmerEnabled = config.getBoolean("jobs_farmer.enabled", true);
+        this.jobs_farmerPapi = config.getString("jobs_farmer.text", "%vault_eco_balance_fixed%");
+        this.jobs_farmerOffset = config.getInt("jobs_farmer.offset", 88);
+        this.jobs_farmerWorlds = new HashSet<>(config.getStringList("jobs_farmer.worlds"));
+
+
 
         this.debug = config.getBoolean("log.debug", false);
 
